@@ -7,7 +7,7 @@ This is a Scheme interpreter I'm writing in Ioke as I read through Peter Norvig'
 It can do bare basics. Will add more soon.
 
 ```
-$ ioke ~/Code/ischeme/main.ik
+$ ioke ~/Code/ischeme/lib/main.ik
 ischeme> (define fact (lambda (n) (if (<= n 1) 1 (* n (fact (- n 1))))))
 #<LexicalBlock:147E0BA>
 ischeme> (fact 10)

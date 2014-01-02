@@ -3,11 +3,11 @@
 
 System loadPath <<(System currentDirectory)
 
-use("lib/eval.ik")
-use("lib/parser.ik")
-use("lib/env.ik")
-use("lib/utils.ik")
-use("lib/inport.ik")
+use("ischeme/eval.ik")
+use("ischeme/parser.ik")
+use("ischeme/env.ik")
+use("ischeme/utils.ik")
+use("ischeme/inport.ik")
 
 ;; setup the initial environment
 global_env = Env mimic
