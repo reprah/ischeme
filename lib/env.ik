@@ -45,6 +45,7 @@ Env do(
       :"list" => fn(+x, x),
       :"list?" => fn(x, x kind == "List"),
       :"equal?" => fn(x,y, x == y)
+      :"boolean?" => fn(x, x == false || x == true)
     }
   )
 )

@@ -16,6 +16,8 @@ ischeme> (define my_list (list 1 2 3 4 5))
 (1 2 3 4 5)
 ischeme> (cons (cdr my_list) 6)
 (2 3 4 5 6)
+ischeme> (if (boolean? #t) "is a boolean" "not a boolean")
+"is a boolean"
 ischeme> (quit)
 ```
 

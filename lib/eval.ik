@@ -5,6 +5,12 @@ eval = fn(x, env global_env,
   cond(
     x kind == "Symbol", env find(x)[x],
     x kind != "List", x,
+
+    ;; quit before checking any other conditions
+    ;;
+    x[0] == :quit,
+    System exit,
+
     x[0] == :quote, x[1..-1],
 
     x[0] == :if,
@@ -13,7 +19,7 @@ eval = fn(x, env global_env,
 
     x[0] == :"set!",
     (_, var, value) = x
-    env find(x)[x] = eval(value, env),
+    env find(var)[var] = eval(value, env),
 
     x[0] == :define,
     (_, var, value) = x
