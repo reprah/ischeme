@@ -4,10 +4,17 @@ repl = fn(prompt, inport,
   "IScheme version 2.0\n" println
   prompt print
   loop(
-    v = Parser parse(inport)
-    val = eval(v)
-    to_lisp(val) println
-    prompt print
+    bind(
+      ;; error handling function
+      rescue(fn(con,
+      "#{con kind}: #{con report}" println
+      prompt print)),
+
+      v = Parser parse(inport)
+      val = eval(v)
+      to_lisp(val) println
+      prompt print
+    )
   )
 )
 
